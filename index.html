@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Nursing Home - Connect With Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 25%, #90caf9 50%, #ffffff 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        /* Medical cross pattern in background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(33, 150, 243, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(33, 150, 243, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px 30px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 
+                0 25px 50px rgba(33, 150, 243, 0.15),
+                0 10px 25px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(33, 150, 243, 0.1);
+        }
+        
+        .container:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 35px 70px rgba(33, 150, 243, 0.2),
+                0 15px 35px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+        
+        .logo-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.08), rgba(255, 255, 255, 0.5));
+            border-radius: 20px;
+            border: 2px dashed rgba(33, 150, 243, 0.3);
+            position: relative;
+        }
+        
+        .hospital-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.2);
+            background: white;
+            padding: 10px;
+        }
+        
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
+        }
+        
+        .logo-text {
+            color: #1976d2;
+            font-size: 12px;
+            font-style: italic;
+        }
+        
+        h1 {
+            color: #1976d2;
+            margin-bottom: 8px;
+            font-size: 32px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+        }
+        
+        .subtitle {
+            color: #455a64;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .location {
+            color: #78909c;
+            margin-bottom: 30px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .link-button {
+            display: block;
+            width: 100%;
+            padding: 16px 20px;
+            margin: 12px 0;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+        
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .link-button:hover::before {
+            left: 100%;
+        }
+        
+        .facebook {
+            background: linear-gradient(135deg, #4267B2, #365899);
+            color: white;
+            border-color: #4267B2;
+        }
+        
+        .facebook:hover {
+            background: linear-gradient(135deg, #365899, #2d4373);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(66, 103, 178, 0.4);
+        }
+        
+        .instagram {
+            background: linear-gradient(135deg, #E4405F, #C13584, #833AB4);
+            color: white;
+            border-color: #E4405F;
+        }
+        
+        .instagram:hover {
+            background: linear-gradient(135deg, #C13584, #833AB4, #5851DB);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(228, 64, 95, 0.4);
+        }
+        
+        .location-btn {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            color: white;
+            border-color: #2196f3;
+        }
+        
+        .location-btn:hover {
+            background: linear-gradient(135deg, #1976d2, #1565c0);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(33, 150, 243, 0.4);
+        }
+        
+        .review {
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+            color: white;
+            border-color: #4caf50;
+        }
+        
+        .review:hover {
+            background: linear-gradient(135deg, #388e3c, #2e7d32);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4);
+        }
+        
+        .website {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            border-color: #ff9800;
+        }
+        
+        .website:hover {
+            background: linear-gradient(135deg, #f57c00, #ef6c00);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 152, 0, 0.4);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-color: #25D366;
+        }
+        
+        .whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E, #075E54);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+        }
+        
+        .app-store {
+            background: linear-gradient(135deg, #01875f, #137333);
+            color: white;
+            border-color: #01875f;
+        }
+        
+        .app-store:hover {
+            background: linear-gradient(135deg, #137333, #0d5025);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(1, 135, 95, 0.4);
+        }
+        
+        .icon {
+            margin-right: 12px;
+            font-size: 20px;
+        }
+        
+        .footer {
+            margin-top: 35px;
+            color: #78909c;
+            font-size: 14px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), rgba(255, 255, 255, 0.3));
+            border-radius: 15px;
+            border: 1px solid rgba(33, 150, 243, 0.1);
+        }
+        
+        .medical-cross {
+            display: inline-block;
+            margin: 0 8px;
+            color: #2196f3;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .link-button {
+                padding: 14px 18px;
+                font-size: 15px;
+            }
+            
+            .logo-placeholder {
+                width: 70px;
+                height: 70px;
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <!-- Replace 'logo.png' with your exact filename -->
+            <img src="https://github.com/drvadgaonkar/links/blob/main/vijaynursinghome.png?raw=true" alt="Vijay Nursing Home Logo" class="hospital-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="logo-fallback" style="display:none;">
+                <div class="logo-placeholder">⚕️</div>
+                <div class="logo-text">Logo not found - check filename</div>
+            </div>
+        </div>
+        
+        <h1>Vijay Nursing Home</h1>
+        <p class="subtitle">Quality Healthcare Services</p>
+        <p class="location">
+            <span>📍</span> Nashik, Maharashtra
+        </p>
+        
+        <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="link-button facebook">
+            <span class="icon">📘</span>
+            Follow us on Facebook
+        </a>
+        
+        <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="link-button instagram">
+            <span class="icon">📷</span>
+            Follow us on Instagram
+        </a>
+        
+        <a href="https://maps.google.com/maps?q=Vijay+Nursing+Home+Nashik" target="_blank" class="link-button location-btn">
+            <span class="icon">🏥</span>
+            Find Our Location
+        </a>
+        
+        <a href="https://g.page/YOUR_BUSINESS/review" target="_blank" class="link-button review">
+            <span class="icon">⭐</span>
+            Leave a Google Review
+        </a>
+        
+        <a href="https://YOUR_WEBSITE_URL" target="_blank" class="link-button website">
+            <span class="icon">🌐</span>
+            Visit Our Website
+        </a>
+        
+        <a href="https://play.google.com/store/apps/details?id=YOUR_APP_PACKAGE_NAME" target="_blank" class="link-button app-store">
+            <span class="icon">📱</span>
+            Download Our App
+        </a>
+        
+        <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="link-button whatsapp">
+            <span class="icon">💬</span>
+            Chat on WhatsApp
+        </a>
+        
+        <div class="footer">
+            <span class="medical-cross">⚕️</span>
+            Caring for your health with compassion
+            <span class="medical-cross">⚕️</span>
+        </div>
+    </div>
+</body>
+</html>
